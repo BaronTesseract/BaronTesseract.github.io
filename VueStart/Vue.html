@@ -1,0 +1,115 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="urf-8">
+    <link rel='stylesheet' type='text/css' href='styles/vue.css'>
+    <script src = "scripts/vue.js"></script>
+  </head>
+  <body>
+   <div id="app" class="main-wrapper">
+     <div v-on:click="toLeft" class="aside-button">
+        <span v-bind:class="{rotated90: asideMenuActive}">=</span>
+     </div>
+     <header  v-bind:class="{toleft: asideMenuActive}">
+       <h1>Это заголовок <span class="blue-text">ЭЙЧ_УВАН</span>, первый и единственный</h1>
+     </header>
+     <aside v-bind:class="{tonormalx: asideMenuActive}">
+       <ul>
+         <li v-for="item in asideList"><a href="#app">{{item}}</a></li>
+       </ul>
+     </aside>
+     <section  v-bind:class="{toleft: asideMenuActive}">
+       <template v-for="item in cardList">
+         <div class="card">
+           <div class="card__img">
+              <img v-bind:src="item['imgUrl']" alt="pic2">
+           </div>
+           <div class="card__text">
+             <p><span class="blue-text">{{item['blueText']}}<br></span>{{cutText(item['text'], 200)}}</p>
+           </div>
+         </div>
+       </template>
+    
+     </section>
+     <footer  v-bind:class="{toleft: asideMenuActive}">
+      <aside class="aside-menu-footer">
+       <ul class="aside-list--display">
+         <li v-for="item in asideList"><a href="#app">{{item}}</a></li>
+       </ul>
+     </aside>
+      <div class="footer__info">contact info bla<br>bla ов овгу гуту ушв угу ушв ушу угащвз ущв ущв вщул bla
+      </div>
+     <form class="form form__fieldset">
+        <p>Обратка:</p>
+        <label>Ты кто</label>
+        <input type="text" placeholder="Вот тут имя нада">
+        <label>А сюда букавы</label>
+        <textarea></textarea>
+        <input type="button" value="Винни пуф">
+     </form>
+     <span class="allrights">all rights reserved<br>BARONTESSERACT</span>
+     </footer>
+   </div>
+   
+    <script>
+      
+    let app = new Vue({
+      el: '#app',
+      data: {
+        asideMenuActive: false,
+        asideList: ['aside пункт меню один', 'пункт два', 'three', 'four', 'five and enouth'],
+        cardList: [{
+          imgUrl: "pics/content1.jpg",
+          blueText: "it's blue text, mathafaka",
+          text: "Once upon time... Here he come."
+        },
+        {
+          imgUrl: "pics/content2.jpg",
+          blueText: "it's blue text, mathafaka",
+          text: "Здесь пробую написать какой-нибудь длинный текст. Нужно положить сюда что-то умное и оригинальное, но мне лень. Some text. Once upon time... Here he come."
+        },
+        {
+          imgUrl: "pics/content3.jpg",
+          blueText: "it's blue text, mathafaka",
+          text: "★some text. Once upon time... Here he comhhjjfofofofofkriritirr kfpr rofnfkdjd fofpfornrnr fof fobpfndovpfnr dobo o of dod dod dod dod dof dof fof fof dlfodkdjdkd dokf dmr ofojbe rkto kfodid ifijdkdid kfkd dkfidkdjkd kfkdidi ifkdidi idididi idjdjdi ifididij ididjdjjdidkdi ifi."
+        },
+        {
+          imgUrl: "pics/content4.jpg",
+          blueText: "it's blue text, mathafaka",
+          text: "Once upon time... Here he come."
+        },
+        {
+          imgUrl: "pics/content5.jpg",
+          blueText: "it's blue text, mathafaka",
+          text: "★some text. Once upon time... Here he come."
+        },
+        {
+          imgUrl: "pics/logo.png",
+          blueText: "it's blue text, mathafaka",
+          text: "★some text. Once upon time... Here he come."
+        },
+        {
+          imgUrl: "pics/content1.jpg",
+          blueText: "",
+          text: ""
+        }]
+      },
+      methods: {
+        cutText: function(str, num) {
+          let cut = str.length-num;
+          if (str.length > num) {
+            str = str.split('');
+            str.splice(num, cut);
+            str.push('...');
+            str = str.join('');
+          }
+          return str
+        },
+        toLeft: function(){
+          this.asideMenuActive = this.asideMenuActive ? false : true;
+        }
+      }
+    })
+    </script>
+  </body>
+</html>
