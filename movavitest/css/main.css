@@ -115,6 +115,9 @@ ul{
     width: 10px;
     cursor: pointer;
 }
+.item__close img:hover{
+    filter: brightness(300%);
+}
 .item__title{
     width: 130px;
     padding: 0 0 0 10px;
