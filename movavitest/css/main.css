@@ -203,8 +203,10 @@ ul{
         overflow: hidden;
         transform: translateX(calc(50vw - 80px));
         width: 114px;
-        padding: 15px 0 0 15px;
-        height: 120px;
+        top: 0;
+        padding: 0px 0 0 15px;
+        height: 100px;
+        margin: 0;
     }
     .hidden{
         visibility: hidden;
@@ -230,6 +232,7 @@ ul{
     }
     .cart__title{
         font-size: 2.1em;
+        line-height: 100px;
     }
     .item__close img{
         width: 10vw;
