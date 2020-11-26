@@ -34,7 +34,7 @@ let cart = document.querySelector('.cart');
 let cartItems = []; //массив с индексами (из массива products) продуктов в корзине
 let section = document.querySelector('.section');
 
-if (sessionStorage.cartItems.length) {
+if (sessionStorage.cartItems) {
     cartItems = JSON.parse(sessionStorage.cartItems);
     cartItems.map((elem) => {
         elem = Number(elem);
