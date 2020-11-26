@@ -201,7 +201,7 @@ ul{
     } 
     .minimalize{
         overflow: hidden;
-        transform: translateX(calc(50vw - 80px));
+        transform: translateX(calc(50vw - 57px));
         width: 114px;
         top: 0;
         padding: 0px 0 0 15px;
