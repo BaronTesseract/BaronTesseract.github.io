@@ -57,6 +57,10 @@ function cartClick(event) {
     if (event.target.closest('button')) {
         showMessage();
     }
+    if (event.target.closest('.cart__header')) {
+        cart.classList.toggle('minimalize');
+        cart.querySelector('.cart__content').classList.toggle('hidden');
+    }
 }
 
 function showMessage() {

@@ -137,7 +137,10 @@ ul{
     background-color: #10546b;
 }
 @media screen and (max-width: 800px){
-    .container, header, footer, section, .product{
+    body{
+        font-size: 20px;
+    }
+    .container, .header, .footer, .section, .product{
         width: 100vw;
     }
     .header{
@@ -147,6 +150,7 @@ ul{
     }
     .content{
         flex-direction: column;
+        align-items: center;
         padding: 0 0 0 0;
     }
     .product{
@@ -161,10 +165,11 @@ ul{
     }
     .product__title{
         font-size: 1.5em;
+        text-align: center;
         line-height: 40px;
     }
     .product__content{
-        width: 60vw;
+        width: 100vw;
         padding: 0 10px 0 10px;
         text-align: justify;
     }
@@ -181,5 +186,67 @@ ul{
     .btn{
         width: 50vw;
         height: 10vw;
+    }
+    .cart{
+        position: fixed;
+        overflow-y: scroll;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        width: 95vw;
+        height: 95vh;
+        font-size: 1.7em;
+        transition: 0.4s linear;
+    } 
+    .minimalize{
+        overflow: hidden;
+        transform: translateX(calc(50vw - 80px));
+        width: 114px;
+        padding: 15px 0 0 15px;
+        height: 120px;
+    }
+    .hidden{
+        visibility: hidden;
+        opacity: 0;
+    }
+    .bold{
+        font-weight: 900;
+    }
+    .cart__header{
+        position: sticky;
+        top: -15px;
+        height: auto;
+        width: 100%;
+        background-color: #fff;
+    }
+    .cart__content{
+        width: 100%;
+    }
+    .cart__item{
+        display: flex;
+        justify-content: space-between;
+        margin: 0 0 20px 0;
+    }
+    .cart__title{
+        font-size: 2.1em;
+    }
+    .item__close img{
+        width: 10vw;
+        cursor: pointer;
+    }
+    .item__title{
+        width: 70vw;
+        padding: 0 0 0 10px;
+        text-align: left;
+    }
+    .item__price{
+        width: 20vw;
+        text-align: right;
+    }
+    .cart__price{
+        margin: 20px 0;
+        text-align: right;
+        border-top: 1px solid #e0e0e0;
     }
 }
