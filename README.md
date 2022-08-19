@@ -1,2 +1,0 @@
-# BaronTesseract.github.io
-Main
